@@ -1,0 +1,197 @@
+/*-------------------------------------------------------------------------------------------*/
+/* 7. WIDGETS */
+/*-------------------------------------------------------------------------------------------*/
+
+#widgets  { border-bottom: 1px solid #3877a8; }
+
+/* 7.1 Generic Widgets */
+.widget  { margin: 0 0 40px 0; font-size:12px; }
+.widget h3  { margin: 0 0 10px 0; font-size:12px; text-transform: uppercase; font-weight: bold; color:#043255; }
+.widget p { font:12px/20px Arial, Helvetica, sans-serif; margin-bottom:15px; }
+
+.widget ul  { clear:both; list-style: none; border-top: 1px solid #3877a8; border-bottom: 1px solid #65ace2; }
+.widget ul li  { padding: 0 0 0 10px; border-top: 1px solid #65ace2; border-bottom: 1px solid #3877a8; color: #28526d; }
+.widget ul li a  { line-height: 26px; text-decoration: none; color: #fff; }
+.widget ul li a:hover  { color: #043255; text-shadow: none; }
+.widget ul ul  { padding: 0 0 0 15px; border-top: none; }
+
+#sidebar .widget_recent_comments li, #sidebar .widget_woo_twitter li  { padding: 5px 10px; line-height: 18px; } /* RESET LI STYLING FOR RECENT COMMENT & TWITTER */
+.widget_recent_comments li a, .widget_woo_twitter a  { display: inline; padding: 0; line-height: 18px!important; background: none!important; border: none!important; } /* RESET <A> STYLING FOR RECENT COMMENT & TWITTER */
+
+#footer-widgets { border-top:1px solid #e6e6e6; padding:10px 0; }
+#footer-widgets .block { padding:20px 0 0 20px; width:210px; float:left; }
+
+
+/* 7.2 Specific Widgets */
+
+/* SOCIAL */
+#social h3  {  }
+#social .inside  { border: 2px solid #4783b0; }
+#social ul  { border: none; }
+#social li  { padding: 10px 10px; border-bottom: 1px solid #407ca8; border-top: none; background: #4a8bbc; }
+#social li:hover  { padding-left: 20px; background-image: url(images/ico-social_popout.png); background-repeat: no-repeat; background-position: 235px 10px; }
+#social li img  { float: left; margin: 0 10px 0 0; }
+#social li a  { padding: 0; line-height: 14px; }
+#social li a .site  { display: block; line-height: 15px; padding: 3px 0 0 0; font-size: 16px; font-weight: bold; text-transform: uppercase; color: #fff; }
+#social li a .url  { display: block; line-height: 15px; font-size: 12px; color:#193b51; font-weight: bold; }
+
+/* WIDGET FORMS */
+.widget_woo_search  { border-bottom: 1px solid #65ace2; }
+.widget_woo_search .searchform  { padding: 0 0 15px 0; border-bottom: 1px solid #3877a8; }
+.widget input.s  { float:left; width: 70%; padding: 4px 0 4px 7px; margin-right:5px; background-color: #efefef; border-color: #3877a8 #65ace2 #65ace2 #3877a8; border-width:1px; border-style:solid;}
+.widget input.s:focus  { background-color: #fff; }
+.widget .screen-reader-text  { display: none; }
+.widget input.submit { float:right; padding: 4px 5px; background-color: #3877a8; border: none; text-transform: uppercase; font-weight: bold; color: #fff; }
+.widget input.submit:hover { background-color: #043255; }
+
+/* TWITTER */
+.widget_woo_twitter h3  { margin: 0; padding: 10px 0 5px 0; background: url(images/ico-twitter.png) no-repeat right top; }
+#sidebar .widget_woo_twitter ul  { padding: 10px; border: none; background: #4a8bbc; }
+#sidebar .widget_woo_twitter li  { border: none; padding: 0; color: #28526d; font-weight: bold; }
+
+/* FLICKR */
+.widget_woo_flickr h3  {}
+.widget_woo_flickr h3 span{color:#0061D8;}
+.widget_woo_flickr h3 span span{color:#FF1183;}
+.widget_woo_flickr .flickr_badge_image  { float: left; margin: 0 9px 9px 0; }
+
+.widget_woo_flickr .wrap  { position: relative; margin-right: -10px; margin-bottom: 20px; padding: 0; }
+.widget_woo_flickr a img  { float: left;  margin: 0 0 0 0;  display: block; border: #65ace2 3px solid; }
+.widget_woo_flickr a:hover img  { border:#28526d 3px solid; }
+
+/* LIFESTREAM */
+.widget_lifestream ul li  { border-bottom: 1px solid #e0e6e6; }
+.widget_lifestream ul li a  { border:none; background:none!important; }
+.widget_lifestream ul .lifestream_meta  { color: inherit; }
+
+/* CALENDAR */
+#wp-calendar{width:100%;margin-bottom:15px;clear:both;padding:0;}
+#wp-calendar a:link, #wp-calendar a:visited  { color: #fff; }
+#wp-calendar a:hover  { color: #043255; text-shadow: none; }
+#wp-calendar caption{}
+#wp-calendar th,#wp-calendar td{text-align:center;background:#65ace2;color:#28526d;padding:5px; border:1px solid #65ace2;}
+#wp-calendar td{background:transparent;}
+#wp-calendar td,table#wp-calendar th{padding:3px 0;}
+
+/* ADS */
+.adspace-widget  { text-align: center; }
+.adspace-widget h3  { text-align: left; }
+.adspace-widget img  { border: #65ace2 3px solid; }
+
+/* WOOTABS */
+#tabs {	height:auto; display: block; margin-bottom:30px; }
+
+#tabs ul.wooTabs { padding:0 0 0 7px; }
+#tabs ul.wooTabs li { float: left; display:inline; color: #ffffff; margin:0px; cursor: pointer; }
+#tabs ul.wooTabs li a.selected, #tabs ul.wooTabs li a:hover { background:#4783b0; color: #fff; text-decoration:none; }
+#tabs ul.wooTabs li a {	color:#28526d; font-size: 10px; font-weight: bold; display: block;float: left;padding: 8px 9px; text-transform:uppercase; }
+
+#tabs .inside { background:#4a8bbc; border: 2px solid #4783b0; }
+#tabs .inside li {}
+#tabs #tab-tags { padding:10px; }
+#tabs .inside ul { margin:0; }
+#tabs .inside li { border-bottom:1px solid #4783b0; border-width:0 1px 1px 1px; padding:10px; }
+#tabs .inside li a { font-weight: bold; color: #fff; }
+#tabs .inside a:hover{}
+#tabs .inside li span.meta { display:block; color: #193b51; font: bold 11px/12px Helvetica, Arial,sans-serif; text-transform:uppercase; }
+#tabs .inside li img.avatar, #tabs .inside li img.thumbnail { border: 1px solid #ddd; padding: 2px;	background-color: #ffffff; float: left;	margin: 0 8px 0 0; }
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 8. COMMENTS */
+/*-------------------------------------------------------------------------------------------*/
+
+/* 8.1 Comments */
+#comments {margin-top:20px;padding:0; zoom:1;}
+#commentsheader  {  }
+#commentsheader .icon  { float: left; width: 60px; height: 60px; border-top: 3px solid #b5b39e; background: url(images/ico-comments_big.png) no-repeat center 27px }
+#commentsheader h3 { float: left; width: 420px; padding: 28px 0 0 0; font:normal bold 24px/22px Arial, Helvetica, sans-serif; border-top: 1px solid #b5b39e; }
+#commentsheader .leavecomment  { float: left; width: 140px; padding: 26px 0 0 0; border-top: 3px solid #b5b39e; }
+#commentsheader .leavecomment a  { background-color: #b5b39e; }
+
+#comments .commentlist  { margin: 30px 0 0 0; }
+#comments .comment { width:100%;list-style-type:none; }
+#comments .comment.depth-1  { border:0 !important; }
+#comments .avatar-box  { float: left; width: 60px; }
+#comments .avatar-box img  { padding: 4px; border: 1px solid #fff; background:#ebebeb; }
+#comments .comment .comment-container  { margin: 0px 0 20px 70px; padding: 10px 0 0 10px; border-top: 1px solid #b5b39e; }
+#comments .comment-head  { margin: 0 0 15px 0; }
+#comments .comment-head .avatar img{margin: 0 10px 0 0;vertical-align: middle;border:3px solid #eee;}
+#comments .comment-head .name  { padding: 8px 20px 0 0; font-weight: bold; font-size: 15px; }
+#comments .comment-head .comment-meta  { float: right; text-align: right; color: #474747; }
+#comments .comment-head .date, #comments .comment-head .edit, #comments .comment-head .perma { font-size: 11px; text-transform: uppercase; }
+#comments .comment-entry p  { margin: 0 0 14px 0; font-size: 12px;}
+
+#comments ul.children{margin:0 0 0 40px;padding:0;}
+ #comments .comment-reply-link  { margin-bottom: 10px; }
+#comments .cancel-comment-reply{ font-size: 11px; text-transform: uppercase; }
+.reply a:link, .reply a:visited  { padding: 4px 6px 3px 6px; text-transform: uppercase; font-weight: bold; font-size: 10px; color: #fff; background-color: #417faf; }
+.repy a:hover  { background-color: #043255; }
+
+#comments .navigation { }
+#comments .navigation a{ display: block; margin: 15px 0 0 0; text-decoration: none; }
+#comments .navigation a:hover{}
+
+/* 8.2 Pingbacks / Trackbacks */
+h3#pings  { margin: 20px 0 10px 0; }
+.pinglist li  { margin: 0 0 0 20px; list-style-type: decimal; }
+.pinglist li .author  { font-weight: bold; font-size: 15px; }
+.pinglist li .date  { font-size: 11px; }
+.pinglist li .pingcontent  { display: block; margin: 10px 0; }
+
+/* 8.3 Comments Form */
+#respond  { margin: 15px 0 0 68px; padding: 0; border-top: 2px solid #b5b39e; }
+.comment-container #respond  { margin: 0; padding: 0; border: none; }
+#respond h3  { float: none; margin: 27px 0 0 0; font-size: 24px; font-weight: bold; }
+
+#commentform  {	margin: 15px 0 0 0; }
+#commentform label  { font-size: 11px; text-transform: uppercase; }
+#commentform input.txt, #commentform textarea  { font-size: 13px; color: #393939; background-color: #cfcdb6; border: 1px solid #b5b39e; }
+#commentform input.txt:focus, #commentform textarea:focus  { background-color: #f4f2db; }
+#commentform input.txt  { width: 30%; margin: 0 5px 10px 0; padding: 7px 5px; }
+#commentform input#url  { margin-right: 0; }
+#commentform textarea  { width: 97.5%!important; padding: 5px; }
+#commentform #submit  { margin: 15px 0 0 0; padding: 9px 12px 5px 12px; font-weight: bold; font-family: Helvetica, Arial, sans-serif; font-size: 14px; background-color: #ff7e00; }
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* 9. MISC */
+/*-------------------------------------------------------------------------------------------*/
+
+/* 9.1 Buttons */
+.button, .button:visited{ background: url(images/alert-overlay.png); display: inline-block; text-transform:uppercase; text-align: center; padding: 6px 10px 5px; color: #fff !important; text-decoration: none; border:none; position: relative; cursor: pointer; }
+.button, .button:visited{ background-color:#555; }
+.button:hover{ color: #fff  !important; text-decoration:none; }
+.button:active { top: 1px; }
+.small.button, .small.button:visited { font-size: 10px; padding: 0px 6px 1px; text-transform:uppercase;}
+.button, .button:visited, .medium.button, .medium.button:visited { font-size: 12px; font-weight: bold; line-height: 1; }
+.large.button, .large.button:visited { font-size: 14px; padding: 8px 14px 9px; }
+
+/* 9.2 Info Boxes */
+p.alert, p.download, p.info, p.note, p.tick {  margin:10px 0 20px 0; padding:9px 10px 9px 50px; }
+p.alert { border-top:1px solid #f0baa2; border-bottom:1px solid #f0baa2; background:#ffd9c8 url(images/ico-alert.png) no-repeat 20px 13px; }
+p.download { border-top:1px solid #d4ebaf; border-bottom:1px solid #d4ebaf; background:#edfcd5 url(images/ico-download.png) no-repeat 20px 13px; }
+p.tick { border-top:1px solid #d4ebaf; border-bottom:1px solid #d4ebaf; background:#edfcd5 url(images/ico-tick.png) no-repeat 20px 13px; }
+p.info { border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee url(images/ico-info.png) no-repeat 20px 13px; }
+p.note { border-top:1px solid #efe3ae; border-bottom:1px solid #efe3ae; background:#fef6d2 url(images/ico-note.png) no-repeat 20px 13px; }
+
+/* 9.3 Contact Form */
+#contact-page .screenReader { left: -9999px; position: absolute; top: -9999px; }
+#contact-page ol.forms{float:left;list-style:none;width:100%;margin:10px 0 0;}
+#contact-page ol.forms li{clear:both;float:left;margin-bottom:18px;position:relative;width:100%}
+#contact-page ol.forms label{cursor:pointer;display:block;float:left; text-align: right; font-weight:700; padding-top: 3px; padding-right:20px;width:100px;}
+#contact-page ol.forms input.txt{width:214px; padding: 4px 0 4px 5px; }
+#contact-page ol.forms input#sendCopy{border:none;}
+#contact-page ol.forms textarea{height:300px;width:400px; padding: 10px 0 0 5px;}
+#contact-page ol.forms li .error{font-size:12px;display:block;margin-left:120px;color:red;}
+#contact-page ol.forms li.textarea .error{display:block; margin-left:120px}
+#contact-page ol.forms li.screenReader{margin-bottom:0;}
+#contact-page ol.forms li.buttons .submit{ margin: 15px 0 0 120px; padding: 8px 12px 5px 12px; font-weight: bold; font-family: Helvetica, Arial, sans-serif; font-size: 14px; background-color: #ff7e00; }
+#contact-page ol.forms li.buttons .submit:hover { color: #884400; text-shadow: none; }
+#contact-page ol.forms li.inline input{width:auto;margin-left:120px;}
+#contact-page ol.forms li.inline label{display:inline;float:none;width:auto;}
+
+
+#contact-page ol.forms textarea, #contact-page ol.forms input.txt  { font-size: 13px; color: #393939; background-color: #cfcdb6; border: 1px solid #b5b39e; }
+#contact-page ol.forms textarea:focus, #contact-page ol.forms input.txt:focus  { background-color: #f4f2db; }

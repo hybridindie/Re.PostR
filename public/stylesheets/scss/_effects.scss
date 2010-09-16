@@ -1,0 +1,91 @@
+/* CSS3 / Browser specific CSS */
+
+/* BORDER RADIUS */
+.nav li ul li a { 
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+.entry img, img.thumbnail, #comments .avatar-box img, .widget input.s, .widget input.submit, #commentsheader .leavecomment a, .reply a, #commentform #submit, #tip, #contact-page ol.forms li.buttons .submit, #tabs  { 
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px; 
+}
+#social .inside, #quicklinks, .widget_woo_twitter ul, .nav-entries, .wp-pagenavi, #commentform textarea, #commentform input.txt, #contact-page ol.forms textarea, #contact-page ol.forms input.txt, #tabs .inside  { 
+	border-radius:5px;
+	-moz-border-radius:
+	5px;-webkit-border-radius:5px;
+}
+#tabs ul.wooTabs li a.selected, #tabs ul.wooTabs li a:hover { 
+	border-top-right-radius:3px; 
+	border-top-left-radius:3px; 
+	-moz-border-radius-topright:3px;	
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-right-radius: 3px; 
+	-webkit-border-top-left-radius:3px; 
+}
+
+/* BOX SHADOW */
+.entry img, img.thumbnail, #comments .avatar-box img, #tip  { 
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
+}
+#quicklinks { 
+	box-shadow: 1px 1px 0 rgba(0,0,0,0.2); 
+	-moz-box-shadow: 1px 1px 0 rgba(0,0,0,0.2); 
+	-webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.2); 
+}
+
+/* TEXT SHADOW */
+.nav a, #footer p, #sidebar h3, #social li a .url, .widget_woo_twitter li, #tabs ul.wooTabs li a, #tabs .inside li span.meta  { 
+	text-shadow:0 1px 0 #fff; 
+	text-shadow:0 1px 0 rgba(255,255,255,0.5); 
+}
+.nav a:hover, .nav li.current_page_item a, #about, #social li a .site, .widget ul li a, #wp-calendar a, .widget input.submit, #commentsheader .leavecomment a, .reply a, #commentform #submit, #contact-page ol.forms li.buttons .submit, #logo .site-title a, #tabs ul.wooTabs li a.selected, #tabs ul.wooTabs li a:hover, #tabs .inside li a   { 
+	text-shadow:0 1px 0 #000; 
+	text-shadow:0 1px 0 rgba(0,0,0,0.5); 
+}
+.post .meta ul li, .post .title, .wp-pagenavi span.pages, #commentsheader h3, #respond h3, .entry h1, .entry h2, .entry h3, .entry h4, .entry h5, .entry h6  { 
+	text-shadow:1px 1px 0 #fff; 
+}
+
+/* MIXED (buttons) */
+.button, .button:visited, .medium.button, .medium.button:visited { 
+	text-shadow: 0 1px 0 rgba(0,0,0,0.25); 
+}
+.button, .button:visited{ 
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	text-shadow: 0 1px 0 rgba(0,0,0,0.25); 
+	border-bottom: 1px solid rgba(0,0,0,.25); 
+	border-bottom-color: rgba(0,0,0,.25); 
+}
+.button:hover, .reply a:hover { opacity:0.9; }
+
+/* Errors overrides */
+
+@mixin notice_ui($font_color: #817134, $bg_color: #FFF6BF, $top_color: #fff, $radius: 5px) {
+	background-color: $bg_color;
+	color: $font_color;
+	border-color: $bg_color*9/10;
+	background-image: -moz-linear-gradient(top, $top_color, $bg_color); /* FF3.6 */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($top_color), to($bg_color)); /* Saf4+, Chrome */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color'); /* IE6,IE7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color')"; /* IE8 */
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	border-width:1px; border-style:solid; padding:9px; margin:0 0 15px;
+}
+
+.notice {
+	@include notice_ui;
+	
+}
+.success {
+	@include notice_ui(#529214, #E6EFC2);
+}
+.error {
+	@include notice_ui(#D12F19, #FBE3E4);
+}
