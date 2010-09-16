@@ -1,0 +1,7 @@
+= div_for(article, :class => "post") do 
+  = permalink_for(article) %>
+  = manage_links_for(article) %>
+  %h3{:class="title"}= article.title
+  
+  .body
+    = article.excerpt

@@ -1,0 +1,505 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none; }
+
+del {
+  text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  color: #222;
+  font-size: 13px;
+  font-family: arial, "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* Success, error & notice boxes for messages and errors. 
+div.error, div.notice, div.success, #flash_failure, #flash_success, #flash_notice {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+div.error, #flash_failure {
+  background: #FBE3E4;
+  color: #D12F19;
+  border-color: #FBC2C4;
+	a {
+		color: #D12F19;
+	}
+}
+
+div.notice, #flash_notice {
+  background: #FFF6BF;
+  color: #817134;
+  border-color: #FFD324;
+	a { 
+		color: #817134;
+	}
+}
+
+div.success, #flash_success {
+  background: #E6EFC2;
+  color: #529214;
+  border-color: #C6D880;
+	a { 
+		color: #529214;
+	}
+}
+*/
+.notice {
+  background-color: #fff6bf;
+  color: #817134;
+  border-color: #191919;
+  background-image: -moz-linear-gradient(top, white, #fff6bf);
+  /* FF3.6 */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#fff6bf));
+  /* Saf4+, Chrome */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color');
+  /* IE6,IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color')";
+  /* IE8 */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 9px;
+  margin: 0 0 15px; }
+
+.success {
+  background-color: #e6efc2;
+  color: #529214;
+  border-color: #191919;
+  background-image: -moz-linear-gradient(top, white, #e6efc2);
+  /* FF3.6 */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e6efc2));
+  /* Saf4+, Chrome */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color');
+  /* IE6,IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color')";
+  /* IE8 */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 9px;
+  margin: 0 0 15px; }
+
+.error {
+  background-color: #fbe3e4;
+  color: #d12f19;
+  border-color: #191919;
+  background-image: -moz-linear-gradient(top, white, #fbe3e4);
+  /* FF3.6 */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#fbe3e4));
+  /* Saf4+, Chrome */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color');
+  /* IE6,IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color')";
+  /* IE8 */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 9px;
+  margin: 0 0 15px; }
+
+/* Misc classes and elements */
+/* Use a .box to create a padded box inside a column.  */
+.box {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  background: #eee; }
+
+/* Use this to create a horizontal ruler across a column. */
+hr {
+  background: #ddd;
+  color: #ddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: 1px;
+  margin: 0 0 1.4em;
+  border: none; }
+  hr .space {
+    background: #fff;
+    color: #fff; }
+
+/* Clearfix hack I love you */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix {
+  display: inline-block; }
+
+/* Hide from IE Mac \*/
+.clearfix {
+  display: block; }
+
+/* End hide from IE Mac */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
+
+h1 {
+  font-size: 2.2em;
+  line-height: 1;
+  margin-bottom: 0.25em; }
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.25em;
+  line-height: 1.1; }
+
+h3 {
+  font-size: 1.3em;
+  line-height: 1;
+  margin-bottom: 0.25em; }
+
+h4 {
+  font-size: 1.1em;
+  line-height: 1.25;
+  margin-bottom: 0.25em; }
+
+h5 {
+  font-size: 1em;
+  margin-bottom: 0.25em; }
+
+h6 {
+  font-size: 1em;
+  margin-bottom: 0.25em; }
+
+/* Text elements */
+p {
+  margin-bottom: 0.5em; }
+  p .last {
+    margin-bottom: 0; }
+  p img {
+    float: left;
+    margin: 1.5em 1.5em 1.5em 0;
+    padding: 0;
+    /* Use this if the image is at the top of the <p>. */ }
+    p img .top {
+      margin-top: 0; }
+
+img {
+  margin: 0 0 1.5em; }
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+address {
+  margin-top: 1.5em;
+  font-style: italic; }
+
+del {
+  color: #666; }
+
+a:link {
+  color: #1a4882;
+  text-decoration: underline; }
+
+a {
+  color: #1a4882;
+  text-decoration: underline; }
+  a:visited {
+    color: #1a4882; }
+  a:hover {
+    color: #052246; }
+  a:active, a:focus {
+    color: #1a4882; }
+
+blockquote {
+  margin: 1.5em 0;
+  color: #666;
+  font-style: italic;
+  padding-left: 1em;
+  border-left: 4px solid #d1d1d1; }
+
+strong {
+  font-weight: bold; }
+
+em, dfn {
+  font-style: italic; }
+
+dfn {
+  font-weight: bold; }
+
+pre, code {
+  margin: 1.5em 0;
+  white-space: pre; }
+
+pre, code, tt {
+  font: 1em 'andale mono', 'monotype.com', 'lucida console', monospace;
+  line-height: 1.5; }
+  pre .code, code .code, tt .code {
+    background: #000;
+    color: #fff;
+    padding: 20px; }
+
+tt {
+  display: block;
+  margin: 1.5em 0;
+  line-height: 1.5; }
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1.5em;
+  list-style-position: inside; }
+
+ul {
+  list-style-type: disc; }
+
+ol {
+  list-style-type: decimal; }
+
+dl {
+  margin-bottom: 1.5em;
+  line-height: 1.4; }
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.5em; }
+  dl dd {
+    margin-bottom: 0em; }
+
+dd {
+  margin-left: 0.5em; }
+
+li {
+  line-height: 1.4; }
+
+ol ol, ol ul, ul ul, ul ol {
+  margin-left: 1em; }
+
+/* Tables */
+table {
+  margin-bottom: 2em;
+  width: 100%; }
+
+th {
+  border-bottom: 2px solid #ccc;
+  font-weight: bold;
+  text-align: left; }
+
+td {
+  border-bottom: 1px solid #ddd; }
+
+caption, th, td {
+  padding: 4px 10px 4px 0; }
+
+caption {
+  background: #f1f1f1;
+  padding: 10px 0;
+  margin-bottom: 1em; }
+
+tr, td, th {
+  vertical-align: middle; }
+
+/* Use this if you use span-x classes on th/td. */
+table .last {
+  padding-right: 0; }
+
+/* -------------------------------------------------------------------------------------------------
+
+It's *strongly* suggested that you don't modify this file.  Instead, load a new stylesheet after
+this one in your layouts (eg formtastic_changes.css) and override the styles to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+This stylesheet forms part of the Formtastic Rails Plugin
+(c) 2008 Justin French
+
+--------------------------------------------------------------------------------------------------*/
+/* NORMALIZE AND RESET - obviously inspired by Yahoo's reset.css, but scoped to just form.formtastic
+--------------------------------------------------------------------------------------------------*/
+form.formtastic {
+  /* Errors */
+  /* FIELDSETS & LISTS */
+  /* LABELS */
+  /* STRING & NUMERIC OVERRIDES */
+  /* TEXTAREA OVERRIDES */
+  /* BOOLEAN OVERRIDES */
+  /* RADIO OVERRIDES */
+  /* CHECK BOXES (COLLECTION) OVERRIDES */
+  /* DATE & TIME OVERRIDES */ }
+  form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic select, form.formtastic p {
+    margin: 0;
+    padding: 0; }
+  form.formtastic fieldset {
+    border: 0; }
+  form.formtastic em, form.formtastic strong {
+    font-style: normal;
+    font-weight: normal; }
+  form.formtastic ol, form.formtastic ul {
+    list-style: none; }
+  form.formtastic abbr, form.formtastic acronym {
+    border: 0;
+    font-variant: normal; }
+  form.formtastic input, form.formtastic textarea, form.formtastic select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: 100%; }
+  form.formtastic legend {
+    white-space: normal;
+    color: #000; }
+  form.formtastic ul.errors {
+    color: #cc0000;
+    margin: 0.5em 0 1.5em 25%;
+    list-style: square; }
+    form.formtastic ul.errors li {
+      padding: 0;
+      border: none;
+      display: list-item; }
+  form.formtastic fieldset {
+    overflow: auto; }
+  form.formtastic fieldset.buttons {
+    padding-left: 25%; }
+    form.formtastic fieldset.buttons li {
+      float: left;
+      padding-right: 0.5em; }
+  form.formtastic fieldset > ol > li {
+    margin-bottom: 1.5em; }
+  form.formtastic fieldset > ol > li {
+    overflow: auto; }
+  form.formtastic fieldset > ol > li label {
+    display: block;
+    width: 25%;
+    float: left;
+    padding-top: .2em; }
+  form.formtastic fieldset > ol > li fieldset {
+    position: relative; }
+    form.formtastic fieldset > ol > li fieldset legend {
+      position: absolute;
+      width: 95%;
+      padding-top: 0.1em;
+      left: 0px; }
+      form.formtastic fieldset > ol > li fieldset legend span {
+        position: absolute; }
+    form.formtastic fieldset > ol > li fieldset legend.label label {
+      position: absolute; }
+    form.formtastic fieldset > ol > li fieldset ol {
+      float: left;
+      width: 74%;
+      margin: 0;
+      padding: 0 0 0 25%; }
+      form.formtastic fieldset > ol > li fieldset ol li {
+        padding: 0;
+        border: 0; }
+      form.formtastic fieldset > ol > li fieldset ol li.hidden {
+        display: none; }
+    form.formtastic fieldset > ol > li fieldset p.inline-hints {
+      color: #666;
+      margin: 0.5em 0 0 25%; }
+    form.formtastic fieldset > ol > li fieldset p.inline-errors {
+      color: #c00;
+      margin: 0.5em 0 0 25%; }
+    form.formtastic fieldset > ol > li fieldset ul.errors {
+      color: #c00;
+      margin: 0.5em 0 0 25%;
+      list-style: square; }
+      form.formtastic fieldset > ol > li fieldset ul.errors li {
+        padding: 0;
+        border: none;
+        display: list-item; }
+  form.formtastic fieldset > ol > li.string input {
+    max-width: 74%; }
+  form.formtastic fieldset > ol > li.password input {
+    max-width: 13em; }
+  form.formtastic fieldset > ol > li.numeric input {
+    max-width: 74%; }
+  form.formtastic fieldset > ol > li.text textarea {
+    width: 74%; }
+  form.formtastic fieldset > ol > li.boolean label {
+    padding-left: 25%;
+    width: auto; }
+    form.formtastic fieldset > ol > li.boolean label input {
+      margin: 0 0.5em 0 0.2em; }
+  form.formtastic fieldset > ol > li.radio fieldset ol {
+    margin-bottom: -0.6em; }
+    form.formtastic fieldset > ol > li.radio fieldset ol li {
+      margin: 0.1em 0 0.5em 0; }
+      form.formtastic fieldset > ol > li.radio fieldset ol li label {
+        float: none;
+        width: 100%; }
+        form.formtastic fieldset > ol > li.radio fieldset ol li label input {
+          margin-right: 0.2em; }
+  form.formtastic fieldset > ol > li.check_boxes fieldset ol {
+    margin-bottom: -0.6em; }
+    form.formtastic fieldset > ol > li.check_boxes fieldset ol li {
+      margin: 0.1em 0 0.5em 0; }
+      form.formtastic fieldset > ol > li.check_boxes fieldset ol li label {
+        float: none;
+        width: 100%; }
+        form.formtastic fieldset > ol > li.check_boxes fieldset ol li label input {
+          margin-right: 0.2em; }
+  form.formtastic fieldset > ol > li.date fieldset ol li, form.formtastic fieldset > ol > li.time fieldset ol li, form.formtastic fieldset > ol > li.datetime fieldset ol li {
+    float: left;
+    width: auto;
+    margin: 0 .3em 0 0; }
+    form.formtastic fieldset > ol > li.date fieldset ol li label, form.formtastic fieldset > ol > li.time fieldset ol li label, form.formtastic fieldset > ol > li.datetime fieldset ol li label {
+      display: none; }
+      form.formtastic fieldset > ol > li.date fieldset ol li label input, form.formtastic fieldset > ol > li.time fieldset ol li label input, form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
+        display: inline;
+        margin: 0;
+        padding: 0; }
+  form.formtastic fieldset > ol > li > li label {
+    line-height: 100%;
+    padding-top: 0; }
+    form.formtastic fieldset > ol > li > li label input {
+      line-height: 100%;
+      vertical-align: middle;
+      margin-top: -0.1em; }
+
+/* These are styles to make the page look nice */
+body {
+  background-color: #dadada; }
+  body .content {
+    background: #fff;
+    padding: 40px;
+    margin: 40px auto;
+    width: 880px;
+    -moz-border-radius: 24px;
+    -webkit-border-radius: 24px; }
