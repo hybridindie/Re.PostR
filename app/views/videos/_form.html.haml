@@ -1,11 +1,13 @@
-= form_for(@video) do |f|
+= semantic_form_for(@video, :html => { :multipart => true }) do |f|
   - if @video.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@video.errors.count, 'error')} prohibited this user from being saved:"
       %ul
       - @video.errors.full_messages.each do |msg|
         %li= msg
-  
-
-  .actions
+  - f.inputs do 
+    = f.input(:title, :as => :string)
+    = f.input(:attachment, :required => true)
+    = f.input(:embed_code, :as => :text)
+    = f.input(:caption, :as => :text)
     = f.submit

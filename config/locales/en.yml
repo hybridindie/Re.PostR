@@ -18,13 +18,37 @@ en:
       title: "New Post"
 
   audio:
-  
+    index:
+      title: "Post Audio"
+      new_post: "Create a Audio"
+    new:
+      title: "New Audio"
   link:
-    
+    index:
+      title: "Post Link"
+      new_post: "Create a New Link"
+    new:
+      title: "New Link"
   photo:
-    
-  quote:
-    
+    index:
+      title: "Post Photo / Image"
+      new_post: "Create a New Photo / Image"
+    new:
+      title: "New Photo / Image"
+  quotes:
+    index:
+      title: "Post Quote"
+      new_post: "Create a New Quote"
+    new:
+      title: "New Quote"
   video:
-    
+    index:
+      title: "Post Video"
+      new_post: "Create a New Video"
+    new:
+      title: "New Video"
+  carrierwave:
+    errors:
+      integrity: 'Not an image.'
+      processing: 'Cannot resize image.'
   

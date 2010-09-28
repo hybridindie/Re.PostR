@@ -1,2 +1,2 @@
-module AudiosHelper
+module AudioHelper
 end

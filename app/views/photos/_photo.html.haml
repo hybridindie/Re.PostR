@@ -1,12 +1,10 @@
 %li
   %article
     %figure{:class => "float"}
-      = image_tag(photo.attachment.url(:thumb))
+      = link_to(image_tag(photo.attachment.url(:thumb)), photo.attachment.url(), :rel => 'photo')
     %header
-      %h2= link_to(photo.title, post_path(photo))
-    %p= photo.caption
+      %h2= link_to(photo.title, photo.attachment.url(), :rel => 'photo')
+    %p.txt= photo.caption
     %footer
       %p
         %time{:datetime => "#{photo.created_at.strftime("%Y/%m/%d")}"}= photo.created_at.strftime("%B %d, %Y")
-        \|
-        =link_to("Read more", post_path(photo))

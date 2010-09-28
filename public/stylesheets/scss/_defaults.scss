@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
 
-/* Success, error & notice boxes for messages and errors. 
+/* Success, error & notice boxes for messages and errors. */
 div.error, div.notice, div.success, #flash_failure, #flash_success, #flash_notice {
   padding: 0.8em;
   margin-bottom: 1em;
@@ -43,32 +43,6 @@ div.success, #flash_success {
 	a { 
 		color: #529214;
 	}
-}
-*/
-
-@mixin notice_ui($font_color: #817134, $bg_color: #FFF6BF, $top_color: #fff, $radius: 5px) {
-	background-color: $bg_color;
-	color: $font_color;
-	border-color: $bg_color*9/10;
-	background-image: -moz-linear-gradient(top, $top_color, $bg_color); /* FF3.6 */
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($top_color), to($bg_color)); /* Saf4+, Chrome */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color'); /* IE6,IE7 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$top_color', endColorstr='$bg_color')"; /* IE8 */
-	-moz-border-radius: $radius;
-	-webkit-border-radius: $radius;
-	border-radius: $radius;
-	border-width:1px; border-style:solid; padding:9px; margin:0 0 15px;
-}
-
-.notice {
-	@include notice_ui;
-	
-}
-.success {
-	@include notice_ui(#529214, #E6EFC2);
-}
-.error {
-	@include notice_ui(#D12F19, #FBE3E4);
 }
 
 

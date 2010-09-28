@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(:version => 20100915132132) do
     t.datetime "updated_at"
     t.text     "post_data"
     t.string   "post_status"
-    t.string   "post_type"
+    t.string   "attachment"
+    t.string   "type"
   end
 
 end

@@ -1,17 +1,7 @@
-class AudiosController < ApplicationController
-  # GET /audios
-  # GET /audios.xml
-  def index
-    @audios = Audio.all
+class AudioController < ApplicationController
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @audios }
-    end
-  end
+  def index;end
 
-  # GET /audios/1
-  # GET /audios/1.xml
   def show
     @audio = Audio.find(params[:id])
 
@@ -21,10 +11,11 @@ class AudiosController < ApplicationController
     end
   end
 
-  # GET /audios/new
-  # GET /audios/new.xml
   def new
-    @audio = Audio.new
+    @audio = Audio.new(:post_data => { 
+                              :title => nil,
+                              :description => nil
+                           })
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,13 +23,13 @@ class AudiosController < ApplicationController
     end
   end
 
-  # GET /audios/1/edit
   def edit
-    @audio = Audio.find(params[:id])
+    @audio = Audio.find(:post_data => { 
+                              :title => params[:audio][:title],
+                              :description => params[:audio][:content]
+                           })
   end
 
-  # POST /audios
-  # POST /audios.xml
   def create
     @audio = Audio.new(params[:audio])
 
@@ -53,8 +44,6 @@ class AudiosController < ApplicationController
     end
   end
 
-  # PUT /audios/1
-  # PUT /audios/1.xml
   def update
     @audio = Audio.find(params[:id])
 
@@ -69,15 +58,4 @@ class AudiosController < ApplicationController
     end
   end
 
-  # DELETE /audios/1
-  # DELETE /audios/1.xml
-  def destroy
-    @audio = Audio.find(params[:id])
-    @audio.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(audios_url) }
-      format.xml  { head :ok }
-    end
-  end
 end

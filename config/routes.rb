@@ -1,14 +1,14 @@
 RePostr::Application.routes.draw do
 
-  with_options :except => [:show, :destroy] do |post|
-    post.resources :articles
-    post.resources :audio, :plural => "audio", :singular => "audio"
-    post.resources :chats
-    post.resources :links
-    post.resources :photos
-    post.resources :quotes
-    post.resources :snippets
-    post.resources :videos
+  with_options :except => [:show, :destroy] do |p|
+    p.resources :articles
+    p.resources :audio, :plural => "audio", :singular => "audio"
+    #p.resources :chats
+    p.resources :links
+    p.resources :photos
+    p.resources :quotes
+    #p.resources :snippets
+    p.resources :videos
   end
   
   resources :posts, :only => [:index, :show, :destroy]

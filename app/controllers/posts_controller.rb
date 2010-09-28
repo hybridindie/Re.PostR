@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.xml
+
   def index
     @posts = Post.limit(25).group_by(&:day)
 
@@ -10,11 +9,13 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1
-  # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
-    @posts = Post.where(["create_at IN (?)", @post.create_at.beginning_of_day..@post.create_at.end_of_day]).group(&:day)
+    @posts = Post.where(["id != :id AND created_at BETWEEN :beginning AND :end", {
+                    :beginning => @post.created_at.beginning_of_day,
+                    :end => @post.created_at.end_of_day,
+                    :id => @post
+                    }]).group_by(&:day)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,8 +23,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.xml
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

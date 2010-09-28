@@ -1,18 +1,27 @@
-%h1= t '.title'
-%p
-  = link_to t('back'), posts_path
-  = link_to t('edit'), edit_post_path(@post)
+%section{:id => "last_posts"}
+  .single_post
+    %article
+      .float
+        %figure
+          = image_tag("test3.jpg", :alt => "Test")
+        %footer
+          %ul
+            %li
+              %time{:datetime => "#{@post.created_at.strftime("%Y/%m/%d")}"}= @post.created_at.strftime("%B %d, %Y")
+            %li written by Me
+            %li tags
+            %li comments
+      .art
+        %header
+          %h2= link_to(@post.title, post_path(@post))
+        %p= @post.content
 
-%dl
-  %dt= Post.human_attribute_name :author_id
-  %dd= @post.author_id
-  %dt= Post.human_attribute_name :created_at
-  %dd= @post.created_at
-  %dt= Post.human_attribute_name :updated_at
-  %dd= @post.updated_at
-  %dt= Post.human_attribute_name :post_data
-  %dd= @post.post_data
-  %dt= Post.human_attribute_name :post_status
-  %dd= @post.post_status
-  %dt= Post.human_attribute_name :post_type
-  %dd= @post.post_type
+%section{:id => "archive"}
+  - @posts.each do |day, posts|
+    %header{:class => "section_tit"}
+      %h3
+        Also on 
+        = day.strftime("%B %d, %Y")
+    %ol  
+      - posts.each do |post|
+        = render post

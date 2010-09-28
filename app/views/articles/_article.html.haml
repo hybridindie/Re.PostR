@@ -1,7 +1,12 @@
-= div_for(article, :class => "post") do 
-  = permalink_for(article) %>
-  = manage_links_for(article) %>
-  %h3{:class="title"}= article.title
-  
-  .body
-    = article.excerpt
+%li
+  %article
+    %figure{:class => "float"}
+      = image_tag("test3.jpg", :alt => "Test")
+    %header
+      %h2= link_to(article.title, post_path(article))
+    %p.txt= article.excerpt
+    %footer
+      %p
+        %time{:datetime => "#{article.created_at.strftime("%Y/%m/%d")}"}= article.created_at.strftime("%B %d, %Y")
+        \|
+        =link_to("Read more", post_path(article))

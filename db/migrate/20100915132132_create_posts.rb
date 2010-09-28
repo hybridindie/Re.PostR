@@ -6,8 +6,8 @@ class CreatePosts < ActiveRecord::Migration
       t.datetime :updated_at
       t.text :post_data
       t.string :post_status
-      t.string :post_type
-
+      t.string :attachment
+      t.string :type
       t.timestamps
     end
   end

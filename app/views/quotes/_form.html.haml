@@ -1,11 +1,13 @@
-= form_for(@quote) do |f|
+- semantic_form_for(@quote) do |f|
   - if @quote.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@quote.errors.count, 'error')} prohibited this user from being saved:"
       %ul
       - @quote.errors.full_messages.each do |msg|
         %li= msg
-  
-
-  .actions
+  - f.inputs do 
+    = f.input(:title, :as => :string)
+    = f.input(:body, :as => :text)
+    = f.input(:source, :as => :string)
     = f.submit
+

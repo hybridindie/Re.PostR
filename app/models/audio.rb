@@ -1,11 +1,14 @@
 class Audio < Post
-  has_attached_file :attachment,
-                    :url  => "/assets/attachments/:id/:basename.:extension",
-                    :path => ":rails_root/public/assets/attachments/:id/:basename.:extension"
   
-  validates_attachment_presence :attachment
-  validates_attachment_size :attachment, :less_than => 10.megabytes
-  validates_attachment_content_type :attachment, :content_type => ['audio/mpeg']
+  # Add function to create title on file upload with a humanized file name
+  #    Validation added in the mean time
+  def title
+    post_data[:title]
+  end
+  
+  def title=(value)
+    self.post_data[:title] = value
+  end
   
   def description
     post_data[:description]

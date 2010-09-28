@@ -1,11 +1,7 @@
-%h1= t('.title')
-%p= link_to t('article.new.title'), new_article_path
-
-- @posts.each do |day, posts| 
-  .day
-    %h2.date
-      %span.d= day.strftime("%d")
-      %span.a= day.strftime("%a")
-    
-    - posts.each do |post|
-      = render post
+%section{:id => "archive"}
+  - @posts.each do |day, posts|
+    %header{:class => "section_tit"}
+      %h3= day.strftime("%B %d, %Y")
+    %ol  
+      - posts.each do |post|
+        = render post

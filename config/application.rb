@@ -13,7 +13,7 @@ module RePostr
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -26,9 +26,10 @@ module RePostr
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     config.time_zone = 'Eastern Time (US & Canada)'
     
-    # Custom Generator using HAML Damnit
+    # Custom Generator using HAML Damnit, w/ rspec for test - it's a BDD thing
     config.generators do |g|
         g.template_engine :haml
+        g.test_framework :rspec
     end
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
@@ -36,7 +37,7 @@ module RePostr
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2 rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.2.min jquery-ui-1.8.5.custom.min rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

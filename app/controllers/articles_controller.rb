@@ -1,16 +1,11 @@
 class ArticlesController < ApplicationController
-  # GET /articles
-  # GET /articles.xml
-  def index
 
-  end
+  def index;end
 
-  # GET /articles/new
-  # GET /articles/new.xml
   def new
     @article = Article.new(:post_data => { 
                               :title => nil,
-                              :excerpt => nil, 
+                              #:excerpt => nil, 
                               :content => nil
                            })
 
@@ -20,17 +15,14 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
   end
 
-  # POST /articles
-  # POST /articles.xml
   def create
     @article = Article.new(:post_data => { 
                               :title => params[:article][:title],
-                              :excerpt => params[:article][:excerpt], 
+                              #:excerpt => params[:article][:excerpt], 
                               :content => params[:article][:content]
                            })
 
@@ -45,8 +37,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PUT /articles/1
-  # PUT /articles/1.xml
   def update
     @article = Article.find(params[:id])
 

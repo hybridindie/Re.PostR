@@ -1,17 +1,7 @@
 class VideosController < ApplicationController
-  # GET /videos
-  # GET /videos.xml
-  def index
-    @videos = Video.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @videos }
-    end
-  end
+  def index;end
 
-  # GET /videos/1
-  # GET /videos/1.xml
   def show
     @video = Video.find(params[:id])
 
@@ -21,10 +11,12 @@ class VideosController < ApplicationController
     end
   end
 
-  # GET /videos/new
-  # GET /videos/new.xml
   def new
-    @video = Video.new
+    @video = Video.new(:post_data => { 
+                              :title => nil,
+                              :embed_code => nil,
+                              :caption => nil
+                           })
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,15 +24,16 @@ class VideosController < ApplicationController
     end
   end
 
-  # GET /videos/1/edit
   def edit
     @video = Video.find(params[:id])
   end
 
-  # POST /videos
-  # POST /videos.xml
   def create
-    @video = Video.new(params[:video])
+    @video = Video.new(:post_data => { 
+                              :title => params[:video][:title],
+                              :embed_code => params[:video][:embed_code],
+                              :caption => params[:video][:caption]
+                           })
 
     respond_to do |format|
       if @video.save
@@ -53,8 +46,6 @@ class VideosController < ApplicationController
     end
   end
 
-  # PUT /videos/1
-  # PUT /videos/1.xml
   def update
     @video = Video.find(params[:id])
 
@@ -69,15 +60,4 @@ class VideosController < ApplicationController
     end
   end
 
-  # DELETE /videos/1
-  # DELETE /videos/1.xml
-  def destroy
-    @video = Video.find(params[:id])
-    @video.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(videos_url) }
-      format.xml  { head :ok }
-    end
-  end
 end

@@ -1,11 +1,15 @@
 class Photo < Post
-  has_attached_file :attachment, :styles => { :resized => "400x400>" },
-                    :url  => "/assets/attachments/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/attachments/:id/:style/:basename.:extension"
+  mount_uploader :attachment, AttachmentUploader
   
-  validates_attachment_presence :attachment
-  validates_attachment_size :attachment, :less_than => 5.megabytes
-  validates_attachment_content_type :attachment, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  # Add function to create title on file upload with a humanized file name
+  #    Validation added in the mean time
+  def title
+    post_data[:title]
+  end
+  
+  def title=(value)
+    self.post_data[:title] = value
+  end
   
   def caption
     post_data[:caption]
@@ -14,4 +18,5 @@ class Photo < Post
   def caption=(value)
     self.post_data[:caption] = value
   end
+    
 end

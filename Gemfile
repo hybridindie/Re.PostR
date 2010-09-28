@@ -10,13 +10,31 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'thin'
 gem 'haml'
 gem 'formtastic', '>= 1.1.0'
-gem 'paperclip', '>=2.3.3'
+#gem 'paperclip', '>=2.3.3'
+gem 'rmagick'
+gem 'carrierwave'#, :git => 'git://github.com/rsofaer/carrierwave.git'
 gem 'devise', '1.1.2'
 gem 'hpricot'
 
-group :development do
-  gem 'flutie'
+# The social stuff
+gem 'party_boy'
+gem 'twitter'
+gem 'mogli'
+
+
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '>= 2.0.0.beta.22'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'spork'
+  gem 'launchy'
+  gem 'machinist', '>= 2.0.0.beta2'
+  gem 'faker'
+  gem 'nokogiri'
 end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

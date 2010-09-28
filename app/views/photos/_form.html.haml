@@ -1,11 +1,13 @@
-= form_for(@photo) do |f|
+= semantic_form_for(@photo, :html => { :multipart => true }) do |f|
   - if @photo.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@photo.errors.count, 'error')} prohibited this user from being saved:"
       %ul
       - @photo.errors.full_messages.each do |msg|
         %li= msg
-  
-
-  .actions
+  = f.inputs do 
+    = f.input(:title, :as => :string)
+    = f.input(:attachment, :required => true, :as => :file)
+    = f.input(:attachment_cache, :as => :hidden)
+    = f.input(:caption, :as => :text)
     = f.submit

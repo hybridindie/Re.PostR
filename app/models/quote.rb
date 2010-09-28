@@ -1,5 +1,5 @@
 class Quote < Post
-  validates_presence_of :body, :source
+  validates_presence_of :title, :body, :source
   
   def body
     post_data[:body]
@@ -7,6 +7,14 @@ class Quote < Post
   
   def body=(value)
     self.post_data[:body] = value
+  end
+  
+  def title
+    post_data[:title]
+  end
+  
+  def title=(value)
+    self.post_data[:title] = value
   end
   
   def source

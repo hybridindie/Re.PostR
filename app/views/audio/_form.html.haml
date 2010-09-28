@@ -1,11 +1,12 @@
-= form_for(@audio) do |f|
+= semantic_form_for(@audio, :url => audio_index_path, :html => { :multipart => true }) do |f|
   - if @audio.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@audio.errors.count, 'error')} prohibited this user from being saved:"
       %ul
       - @audio.errors.full_messages.each do |msg|
         %li= msg
-  
-
-  .actions
+  - f.inputs do 
+    = f.input(:title, :as => :string)
+    = f.input(:attachment, :required => true)
+    = f.input(:description, :as => :text)
     = f.submit
