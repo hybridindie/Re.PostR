@@ -1,0 +1,13 @@
+%li
+  %article
+    %figure{:class => "float"}
+      = image_tag("test2.jpg", :alt => "Test")
+    %header
+      %h2= quote.title
+    %p.txt= quote.body
+    %h2.source
+      \~
+      = quote.source
+    %footer
+      %p
+        %time{:datetime => "#{quote.created_at.strftime("%Y/%m/%d")}"}= quote.created_at.strftime("%B %d, %Y")
