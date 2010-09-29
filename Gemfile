@@ -17,9 +17,9 @@ gem 'devise', '1.1.2'
 gem 'hpricot'
 
 # The social stuff
-gem 'party_boy'
-gem 'twitter'
-gem 'mogli'
+#gem 'party_boy' #friend and follow stuff
+gem 'twitter' #need i say more
+gem 'mogli' #Opengraph
 
 
 group :development, :test do

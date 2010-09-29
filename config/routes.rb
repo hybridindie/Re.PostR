@@ -1,5 +1,21 @@
 RePostr::Application.routes.draw do
 
+  resources :videos
+
+  resources :quotes
+
+  resources :posts
+
+  resources :audios
+
+  resources :links
+
+  resources :photos
+
+  resources :articles
+
+  resources :galleries
+
   with_options :except => [:show, :destroy] do |p|
     p.resources :articles
     p.resources :audio, :plural => "audio", :singular => "audio"
