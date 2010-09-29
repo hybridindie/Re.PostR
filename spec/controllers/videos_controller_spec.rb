@@ -6,22 +6,6 @@ describe VideosController do
     @mock_video ||= mock_model(Video, stubs).as_null_object
   end
 
-  describe "GET index" do
-    it "assigns all videos as @videos" do
-      Video.stub(:all) { [mock_video] }
-      get :index
-      assigns(:videos).should eq([mock_video])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested video as @video" do
-      Video.stub(:find).with("37") { mock_video }
-      get :show, :id => "37"
-      assigns(:video).should be(mock_video)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new video as @video" do
       Video.stub(:new) { mock_video }
@@ -106,20 +90,6 @@ describe VideosController do
       end
     end
 
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested video" do
-      Video.should_receive(:find).with("37") { mock_video }
-      mock_video.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the videos list" do
-      Video.stub(:find) { mock_video }
-      delete :destroy, :id => "1"
-      response.should redirect_to(videos_url)
-    end
   end
 
 end

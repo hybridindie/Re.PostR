@@ -6,22 +6,6 @@ describe ArticlesController do
     @mock_article ||= mock_model(Article, stubs).as_null_object
   end
 
-  describe "GET index" do
-    it "assigns all articles as @articles" do
-      Article.stub(:all) { [mock_article] }
-      get :index
-      assigns(:articles).should eq([mock_article])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested article as @article" do
-      Article.stub(:find).with("37") { mock_article }
-      get :show, :id => "37"
-      assigns(:article).should be(mock_article)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new article as @article" do
       Article.stub(:new) { mock_article }
@@ -106,20 +90,6 @@ describe ArticlesController do
       end
     end
 
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested article" do
-      Article.should_receive(:find).with("37") { mock_article }
-      mock_article.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the articles list" do
-      Article.stub(:find) { mock_article }
-      delete :destroy, :id => "1"
-      response.should redirect_to(articles_url)
-    end
   end
 
 end

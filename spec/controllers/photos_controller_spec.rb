@@ -6,22 +6,6 @@ describe PhotosController do
     @mock_photo ||= mock_model(Photo, stubs).as_null_object
   end
 
-  describe "GET index" do
-    it "assigns all photos as @photos" do
-      Photo.stub(:all) { [mock_photo] }
-      get :index
-      assigns(:photos).should eq([mock_photo])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested photo as @photo" do
-      Photo.stub(:find).with("37") { mock_photo }
-      get :show, :id => "37"
-      assigns(:photo).should be(mock_photo)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new photo as @photo" do
       Photo.stub(:new) { mock_photo }
@@ -106,20 +90,6 @@ describe PhotosController do
       end
     end
 
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested photo" do
-      Photo.should_receive(:find).with("37") { mock_photo }
-      mock_photo.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the photos list" do
-      Photo.stub(:find) { mock_photo }
-      delete :destroy, :id => "1"
-      response.should redirect_to(photos_url)
-    end
   end
 
 end

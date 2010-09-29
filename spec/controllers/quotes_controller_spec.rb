@@ -6,22 +6,6 @@ describe QuotesController do
     @mock_quote ||= mock_model(Quote, stubs).as_null_object
   end
 
-  describe "GET index" do
-    it "assigns all quotes as @quotes" do
-      Quote.stub(:all) { [mock_quote] }
-      get :index
-      assigns(:quotes).should eq([mock_quote])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested quote as @quote" do
-      Quote.stub(:find).with("37") { mock_quote }
-      get :show, :id => "37"
-      assigns(:quote).should be(mock_quote)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new quote as @quote" do
       Quote.stub(:new) { mock_quote }
@@ -106,20 +90,6 @@ describe QuotesController do
       end
     end
 
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested quote" do
-      Quote.should_receive(:find).with("37") { mock_quote }
-      mock_quote.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the quotes list" do
-      Quote.stub(:find) { mock_quote }
-      delete :destroy, :id => "1"
-      response.should redirect_to(quotes_url)
-    end
   end
 
 end
